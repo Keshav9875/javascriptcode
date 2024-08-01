@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            height:2000px;
+        } */
+
+        body{
+            background-color: blanchedalmond;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div">
+        <button id="btn" onclick="clickme()">click me</button>
+        <a href="https://www.google.com" target="_blank" id="anchor">Go to google</a>
+
+
+    </div>
+    
+   
+    <!-- <img src="10mbimage.jpg" alt="none"> -->
+     <!-- <form>
+        <input type="text" id="input">
+        <label for="input">Enter input:- </label>   
+     </form> -->
+    
+
+    <script >
+        //two method to add event 1.inline event 2.addlistenerevent();
+       let bt=document.getElementById('btn')
+       function clickme(){
+            console.log("Button clicked...");
+       }
+    //    bt.addEventListener("click",clickme) //it takes two parameter 1.event and 2.function (anonymous or simple);
+    //    bt.addEventListener("mouseover",()=>{console.log("mouseover...")}) //execute if you hover the mouse on button.
+    //    bt.addEventListener("mouseout",()=>{alert("mouseout is activated...")})
+    //    bt.removeEventListener('click',clickme)// it will work on external named function only
+    // //    window.addEventListener('load',()=>{console.log("image loaded");})
+    // //    document.addEventListener('DOMContentLoaded',()=>{console.log("image loaded 1.0");})
+    //    btn.addEventListener('dblclick',()=>{console.log("double click event activated...");})
+       btn.addEventListener('mouseup',()=>{console.log(" event activated...");})
+       btn.addEventListener('mousedown',()=>{console.log("down event activated...");})
+    //    window.addEventListener('keydown',key)
+
+    //    function key(event){
+    //         console.log(event.key);
+    //    }
+
+       window.addEventListener('keyup',key)
+
+       function key(event){
+            console.log(event.key);
+       }
+
+       //scroll event by tech gun
+
+       window.addEventListener('scroll',()=>{console.log("scrolling");})
+       //to check scroll up or down
+
+    //    window.addEventListener('wheel',(event)=>{
+    //     if(event.deltaY<0){
+    //         console.log("scrolling up");
+    //     }
+    //     else{
+    //         console.log("scrolling down");
+    //     }
+    //    })
+       
+     // scroll  event  another uses cases 
+    //  window.addEventListener('scroll',scr)
+
+    //  function scr(){
+    //     if(window.pageYOffset>150){
+    //         document.body.style.background="lightblue";
+    //     }
+    //     else{
+    //         document.body.style.background='white';
+    //     }
+       
+    //  }
+
+    //Event on form
+    let io=document.getElementById('input')
+    // console.log(io);
+
+    io.addEventListener('focus',focusfun)
+    io.addEventListener('blur',blurfun)
+    // io.addEventListener('change',()=>{console.log(this.value);})
+    io.addEventListener('input',()=>{console.log(this.value);})
+
+    function focusfun(){
+        io.style.backgroundColor="yellow";
+    }
+    function blurfun(){
+        io.style.backgroundColor="white";
+    }
+
+    //prevent default method
+    let a=document.getElementById('anchor')
+    console.log(a);
+    a.addEventListener('click',(e)=>{
+        console.log("Google");
+        e.preventDefault();
+    })
+
+
+
+    </script>
+</body>
+</html>
