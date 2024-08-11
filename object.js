@@ -5,6 +5,9 @@ const jsuser={
     firstname:'keshavGarg',
     Age:20,
     [mysym]:"mykey",// This is the value of symbol.
+    sayhello(){// this is also the way to create function in object after es6 this concept introduced...
+        console.log("hello");
+    }
 }
 
 // console.log(` Age = ${jsuser.age} and Name = ${jsuser.name} `);
